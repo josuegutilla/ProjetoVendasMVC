@@ -1,4 +1,5 @@
-﻿using VendasWebMvc.Data;
+﻿using NuGet.Protocol.Plugins;
+using VendasWebMvc.Data;
 using VendasWebMvc.Models;
 
 namespace VendasWebMvc.Services
@@ -15,6 +16,12 @@ namespace VendasWebMvc.Services
         public List<Seller> FindAll()
         {
             return _context.Sellers.ToList();
+        }
+
+        public async Task InsertAsync(Seller obj)
+        {
+            _context.Add(obj);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -1,12 +1,20 @@
 ﻿@model IEnumerable<VendasWebMvc.Models.Seller>
 
+@{
+    ViewData["Title"] = "Vendedores";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<br/>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-info">Criar novo</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
+        <tr class="bg-dark text-white">
+            <th >
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
