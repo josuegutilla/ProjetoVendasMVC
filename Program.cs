@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SalesWebMvc.Data;
 using VendasWebMvc.Data;
 using VendasWebMvc.Models;
+using VendasWebMvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,7 @@ builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<Seller>();
 builder.Services.AddScoped<Department>();
 builder.Services.AddScoped<SalesRecord>();
+builder.Services.AddScoped<SellerServices>();
 
 var app = builder.Build();
 

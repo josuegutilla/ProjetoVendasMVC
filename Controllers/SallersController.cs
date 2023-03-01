@@ -1,12 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VendasWebMvc.Services;
 
 namespace VendasWebMvc.Controllers
 {
-    public class SallersController : Controller
+    public class SellersController : Controller
     {
+        private readonly SellerServices _sellerServices;
+
+        public SellersController(SellerServices sellersServices)
+        {
+            _sellerServices = sellersServices;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var lista = _sellerServices.FindAll();
+            return View(lista);
         }
     }
 }
